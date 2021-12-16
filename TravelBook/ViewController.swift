@@ -174,7 +174,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         return pinView
     }
+    
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        // tıklanan yere Navigasyon eklemek için
         if selectedTitle != ""
         {
            let requestLocation = CLLocation(latitude: annotationLatitude, longitude: annotationLongitude)
@@ -224,8 +228,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
         navigationController?.popViewController(animated: true)
     }
-    
- 
     
 }
 
